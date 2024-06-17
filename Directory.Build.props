@@ -1,0 +1,20 @@
+<Project>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LanguageVersion>latest</LanguageVersion>
+
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <AspireVersion>8.*</AspireVersion>
+    <AspNetCoreVersion>8.*</AspNetCoreVersion>
+    <AzureOpenAISdkVersion>1.*-beta.*</AzureOpenAISdkVersion>
+    <MicrosoftExtensionsVersion>8.*</MicrosoftExtensionsVersion>
+    <OpenTelemetryExporterVersion>1.*</OpenTelemetryExporterVersion>
+    <OpenTelemetryExtensionsVersion>1.*</OpenTelemetryExtensionsVersion>
+    <OpenTelemetryInstrumentationVersion>1.*</OpenTelemetryInstrumentationVersion>
+    <SwashbuckleVersion>6.*</SwashbuckleVersion>
+    <YouTubeSubtitlesExtractorVersion>2.*</YouTubeSubtitlesExtractorVersion>
+  </PropertyGroup>
+</Project>
