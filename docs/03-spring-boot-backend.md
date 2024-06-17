@@ -6,7 +6,7 @@
 
 <!-- ![Architecture](./images/03-architecture.png) -->
 
-## 02-1: Spring Boot 프로젝트 생성하기
+## 03-1: Spring Boot 프로젝트 생성하기
 
 1. 터미널을 열고 아래 명령어를 차례로 실행시켜 리포지토리의 루트 디렉토리로 이동합니다.
 
@@ -61,6 +61,8 @@
 
 1. 웹 브라우저를 열고 `http://localhost:8080`으로 접속해서 초기 화면이 나오는 것을 확인합니다.
 1. 터미널 창에서 `CTRL`+`C` 키를 눌러 Spring Boot 앱 실행을 중지합니다.
+
+## 03-2: ASP.NET Core Web API 앱을 Spring Boot 앱으로 이전하기
 
 1. `pom.xml` 파일을 열고 GitHub Copilot Chat을 열어 아래와 같이 입력하여 OpenAPI 라이브러리를 추가합니다.
 
@@ -268,9 +270,11 @@
 1. 웹 브라우저를 열고 `http://localhost:8080`으로 접속해서 Swagger UI 화면이 나오는 것을 확인합니다.
 1. 터미널 창에서 `CTRL`+`C` 키를 눌러 Spring Boot 앱 실행을 중지합니다.
 
-## 숙제
+## 03-3: 숙제
 
 - ASP.NET Core Web API에 있는 `/summarise` 엔드포인트를 GitHub Copilot을 이용해서 Spring Boot 앱으로 이전해 보세요.
+
+  > **NOTE**: [Java용 Azure OpenAI SDK](https://learn.microsoft.com/ko-kr/java/api/overview/azure/ai-openai-readme?WT.mc_id=dotnet-121695-juyoo)가 필요할 수 있습니다.
 
 ---
 
