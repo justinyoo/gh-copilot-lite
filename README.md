@@ -18,7 +18,7 @@
 
 - **SDK**
   - [.NET 8 SDK](https://dotnet.microsoft.com/ko-kr/download/dotnet/8.0?WT.mc_id=dotnet-121695-juyoo)
-  - [OpenJDK 17+](https://learn.microsoft.com/ko-kr/java/openjdk/download?WT.mc_id=dotnet-121695-juyoo)
+  - [Microsoft OpenJDK 17+](https://learn.microsoft.com/ko-kr/java/openjdk/download?WT.mc_id=dotnet-121695-juyoo)
   - [Apache Maven](https://maven.apache.org/download.cgi)
 
 ## Getting Started

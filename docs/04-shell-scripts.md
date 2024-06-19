@@ -76,9 +76,9 @@
     ```bash
     # bash/zsh
     cd $REPOSITORY_ROOT/workshop
-    date=$(date -u -d '+9 hours' +"%Y%m%d")
+    [[ "$(uname)" == "Linux" ]] && date=$(date -u -d '+9 hours' +"%Y%m%d") || [[ "$(uname)" == "Darwin" ]] && date=$(date -u -v+9H +"%Y%m%d")
     url="https://raw.githubusercontent.com/aliencube/MelonChart.NET/main/data/top100-$date.json"
-    pwsh ./Get-MelonChartData.ps1 -Url $url -FilePath "top100.json"
+    pwsh ./Get-MelonChartData.ps1 -Url $url -FilePath ./top100.json
 
     # PowerShell
     cd $REPOSITORY_ROOT/workshop

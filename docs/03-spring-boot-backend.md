@@ -2,7 +2,7 @@
 
 이 세션에서는 [GitHub Copilot](https://docs.github.com/ko/copilot/overview-of-github-copilot/about-github-copilot-business) 기능을 활용해 빠르게 [ASP.NET Core 백엔드 API 앱](https://learn.microsoft.com/ko-kr/aspnet/core/fundamentals/apis?WT.mc_id=dotnet-121695-juyoo)을 Java 기반의 Spring Boot 앱으로 이전해 보겠습니다.
 
-> [GitHub Codespaces](https://docs.github.com/ko/codespaces/overview) 또는 [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=dotnet-121695-juyoo) 환경에서 작업하는 것을 기준으로 합니다.
+> [GitHub Codespaces](https://docs.github.com/ko/codespaces/overview) 또는 [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=dotnet-121695-juyoo) 환경에서 작업하는 것을 기준으로 합니다. 또한 [Microsoft OpenJDK 17+](https://learn.microsoft.com/ko-kr/java/openjdk/download?WT.mc_id=dotnet-121695-juyoo)와 [Spring Boot CLI](https://docs.spring.io/spring-boot/installing.html#getting-started.installing.cli)를 설치했다고 가정합니다.
 
 <!-- ![Architecture](./images/03-architecture.png) -->
 
@@ -23,6 +23,20 @@
     $REPOSITORY_ROOT = git rev-parse --show-toplevel
     cd $REPOSITORY_ROOT
     ```
+
+> 세이브 포인트에서 가져온 프로젝트를 사용하려면 아래 명령어를 차례로 실행시켜 프로젝트를 복원합니다.
+> 
+> ```bash
+> # bash/zsh
+> mkdir -p workshop && cp -a save-points/session-02/. workshop/
+> cd workshop
+> dotnet restore && dotnet build
+> 
+> # PowerShell
+> New-Item -Type Directory -Path workshop -Force && Copy-Item -Path ./save-points/session-02/* -Destination ./workshop -Recurse -Force
+> cd workshop
+> dotnet restore && dotnet build
+> ```
 
 1. 아래 명령어를 차례로 실행시켜 Spring Boot 프로젝트를 생성합니다.
 
@@ -104,7 +118,7 @@
     }
     ```
 
-   위의 `// Constructor, Getters, and Setters` 아래에서 `CTRL`+`I` 키 또는 `CMD`+`I` 키를 눌러 GitHub Copilot Chat 창을 활성화 시킵니다. 그리고 아래 프롬프트를 입력합니다.
+   만약 위와 같이 생성자, 게터, 세터 등을 만들어 주지 않는다면, 위의 `// Constructor, Getters, and Setters` 아래에서 `CTRL`+`I` 키 또는 `CMD`+`I` 키를 눌러 GitHub Copilot Chat 창을 활성화 시킵니다. 그리고 아래 프롬프트를 입력합니다.
 
     ```text
     Add getters and setters for the fields of the WeatherForecast class.
@@ -166,7 +180,7 @@
     }
     ```
 
-   GitHub Copilot이 위와 같이 자동으로 만들어 줬다면, `AspireYouTubeSummariser.ApiApp` 프로젝트의 `Program.cs` 파일에서 아래 영역을 선택합니다.
+   GitHub Copilot이 위와 같이 자동으로 만들어 줬다면, 아직 `/weatherforecast` 엔드포인트를 구현해 주지 않은 상태입니다. 이 경우, `AspireYouTubeSummariser.ApiApp` 프로젝트의 `Program.cs` 파일에서 아래 영역을 선택합니다.
 
     ```csharp
     var summaries = new[]
@@ -190,7 +204,7 @@
     .WithOpenApi();
     ```
 
-   이후 GitHub Copilot Chat을 열어 아래와 같이 프롬프트를 입력해서 Java 코드로 변경합니다.
+   이후 `Program.cs` 파일 탭을 열어둔 채로 GitHub Copilot Chat을 열어 아래와 같이 프롬프트를 입력해서 Java 코드로 변경합니다.
 
     ```text
     @workspace /fix Convert this C# code into Java code
@@ -260,6 +274,31 @@
     }
     ```
 
+1. `YouTubeSummariserApplication.java` 파일을 열어, 아래 코드가 있는지 확인하고 없으면 추가합니다.
+
+```java
+package summariser.youtube.youtubesummariser;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+// ⬇️⬇️⬇️ 코드가 없으면 추가합니다. ⬇️⬇️⬇️
+import org.springframework.context.annotation.ComponentScan;
+// ⬆️⬆️⬆️ 코드가 없으면 추가합니다. ⬆️⬆️⬆️
+
+@SpringBootApplication
+// ⬇️⬇️⬇️ 코드가 없으면 추가합니다. ⬇️⬇️⬇️
+@ComponentScan({"main.java.summariser.youtube.youtubesummariser.controllers"})
+// ⬆️⬆️⬆️ 코드가 없으면 추가합니다. ⬆️⬆️⬆️
+public class YouTubeSummariserApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(YouTubeSummariserApplication.class, args);
+    }
+
+}
+```
+
 1. 아래 명령어를 차례로 실행시켜 Spring Boot 앱을 빌드하고 실행시킵니다.
 
     ```bash
@@ -275,6 +314,8 @@
 - ASP.NET Core Web API에 있는 `/summarise` 엔드포인트를 GitHub Copilot을 이용해서 Spring Boot 앱으로 이전해 보세요.
 
   > **NOTE**: [Java용 Azure OpenAI SDK](https://learn.microsoft.com/ko-kr/java/api/overview/azure/ai-openai-readme?WT.mc_id=dotnet-121695-juyoo)가 필요할 수 있습니다.
+
+- 앞서 만들었던 Blazor 웹 앱의 백엔드를 이 Spring Boot 앱으로 변경한 후 제대로 작동하는지 확인해 보세요.
 
 ---
 
