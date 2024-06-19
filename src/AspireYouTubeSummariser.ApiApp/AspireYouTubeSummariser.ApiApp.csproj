@@ -14,8 +14,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="$(SwashbuckleVersion)" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AspireYouTubeSummariser.ServiceDefaults\AspireYouTubeSummariser.ServiceDefaults.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -9,8 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults();
-
 builder.Services.AddHttpClient<IYouTubeVideo, YouTubeVideo>();
 builder.Services.AddScoped<OpenAIClient>(sp =>
 {
@@ -30,8 +28,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
-app.MapDefaultEndpoints();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
