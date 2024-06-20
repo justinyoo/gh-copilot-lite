@@ -17,9 +17,8 @@
 
     // Uncomment the below to install Java
     "ghcr.io/devcontainers/features/java:latest": {
-      "version": "latest",
-      "additionalVersions": "17",
-      "installMaven": true
+      "installMaven": true,
+      "installGradle": true
     },
 
     // Uncomment the below to install GitHub CLI
@@ -76,7 +75,9 @@
         "GitHub.copilot-chat",
         "ms-dotnettools.csdevkit",
         "ms-vscode.PowerShell",
-        "VisualStudioExptTeam.vscodeintellicode"
+        "VisualStudioExptTeam.vscodeintellicode",
+        "vmware.vscode-boot-dev-pack",
+        "vscjava.vscode-java-pack"
       ],
       "settings": {
         // Uncomment if you want to disable the minimap view
