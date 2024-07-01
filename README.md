@@ -1,6 +1,11 @@
 # GitHub Copilot Workshop
 
-[GitHub Codespaces](https://docs.github.com/ko/codespaces/overview)와 [GitHub Copilot](https://docs.github.com/ko/copilot/overview-of-github-copilot/about-github-copilot-business)을 이용해서 .NET 기반의 프론트엔드 앱과 백엔드 앱을 개발해 보는 핸즈온 워크샵 자료입니다.
+이 워크샵에서는 [GitHub Codespaces](https://docs.github.com/ko/codespaces/overview)와 [GitHub Copilot](https://docs.github.com/ko/copilot/overview-of-github-copilot/about-github-copilot-business)을 이용해서 아래와 같은 실습을 진행합니다.
+
+1. GitHub Copilot을 이용해 .NET 기반의 프론트엔드 앱 개발하기
+1. GitHub Copilot을 이용해 .NET 기반의 백엔드 앱 개발하기
+1. GitHub Copilot을 이용해 .NET 가빈의 백엔드 앱을 Java 기반의 Spring Boot 앱으로 이전하기
+1. GitHub Copilot을 이용해 파워셸 및 Bash 셸 스크립트 작성하기
 
 <!-- ![Overall Architecture](./docs/images/99-architecture.png) -->
 
