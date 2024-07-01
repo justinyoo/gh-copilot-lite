@@ -6,7 +6,7 @@
 
 1. 아래 링크를 클릭해서 Azure OpenAI 프록시 구독을 신청합니다. 구독 신청시 GitHub ID로 로그인해야 합니다.
 
-   👉 구독 신청 링크: [https://aka.ms/aoaiproxy/request](https://aka.ms/aoaiproxy/request)
+   👉 구독 신청 링크: [https://bit.ly/aoai-proxy-request](https://bit.ly/aoai-proxy-request)
 
 1. 로그인 후 화면에서 API키와 Endpoint 값을 확인합니다.
 
@@ -14,7 +14,7 @@
 
 1. 아래 링크를 클릭해서 Azure OpenAI 프록시 구독 및 GitHub Copilot 구독을 신청합니다.
 
-   👉 구독 신청 링크: [https://aka.ms/aoaiproxy/request](https://aka.ms/aoaiproxy/request)
+   👉 구독 신청 링크: [https://bit.ly/aoai-proxy-request](https://bit.ly/aoai-proxy-request)
 
 1. 신청한 이메일을 통해 `DoNotReply@aoai.kr` 발신자로 Azure OpenAI 프록시 구독 코드 및 GitHub Copilot 구독 코드가 온 것을 확인합니다.
 1. 아래 링크를 통해 GitHub Copilot 구독을 마무리합니다.
@@ -85,7 +85,7 @@
 
     ```bash
     # bash/zsh
-    code --list-extensions | findstr "ms-dotnettools.csdevkit"
+    code --list-extensions | grep "ms-dotnettools.csdevkit"
     
     # PowerShell
     code --list-extensions | Select-String "ms-dotnettools.csdevkit"
