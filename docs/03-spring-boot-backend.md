@@ -311,11 +311,10 @@ public class YouTubeSummariserApplication {
 
 ## 03-3: 숙제
 
+- 앞서 만들었던 Blazor 웹 앱의 백엔드를 이 Spring Boot 앱으로 변경한 후 `/weather` 페이지가 제대로 작동하는지 확인해 보세요.
 - ASP.NET Core Web API에 있는 `/summarise` 엔드포인트를 GitHub Copilot을 이용해서 Spring Boot 앱으로 이전해 보세요.
 
   > **NOTE**: [Java용 Azure OpenAI SDK](https://learn.microsoft.com/ko-kr/java/api/overview/azure/ai-openai-readme?WT.mc_id=dotnet-121695-juyoo)가 필요할 수 있습니다.
-
-- 앞서 만들었던 Blazor 웹 앱의 백엔드를 이 Spring Boot 앱으로 변경한 후 제대로 작동하는지 확인해 보세요.
 
 ---
 
