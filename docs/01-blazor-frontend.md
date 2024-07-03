@@ -347,7 +347,7 @@
 
     ![YouTubeSummariserComponent #1](./images/01-blazor-frontend-03.png)
 
-   > YouTube 링크는 무엇이든 상관 없습니다. 여기서는 [https://youtu.be/z1M-7Bms1Jg](https://youtu.be/z1M-7Bms1Jg) 링크를 사용합니다.
+   > YouTube 링크는 무엇이든 상관 없습니다. 여기서는 [https://youtu.be/NN4Zzp-vOrU](https://youtu.be/NN4Zzp-vOrU) 링크를 사용합니다. 혹시나 토큰 길이 관련 에러가 나오는 경우에는 30분 이하의 짧은 동영상을 사용해 보세요.
 
 1. 아래와 같이 에러 메시지가 나오는 것을 확인합니다. "Connection refused" 등의 에러 메시지가 나올 수 있습니다.
 
