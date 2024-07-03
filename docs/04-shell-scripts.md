@@ -76,7 +76,7 @@
     ```bash
     # bash/zsh
     cd $REPOSITORY_ROOT/workshop
-    ([[ "$(uname)" == "Linux" ]] && date=$(date -u -d '+9 hours' +"%Y%m%d")) || ([[ "$(uname)" == "Darwin" ]] && date=$(date -u -v+9H +"%Y%m%d"))
+    [[ "$(uname)" == "Linux" ]] && date=$(date -u -d '+9 hours' +"%Y%m%d") || [[ "$(uname)" == "Darwin" ]] && date=$(date -u -v+9H +"%Y%m%d")
     url="https://raw.githubusercontent.com/aliencube/MelonChart.NET/main/data/top100-$date.json"
     pwsh ./Get-MelonChartData.ps1 -Url $url -FilePath ./top100.json
 
@@ -87,7 +87,11 @@
     ./Get-MelonChartData.ps1 -Url $url -FilePath "top100.json"
     ```
 
-## 04-2: 파워셸 스크립트를 Bash 셸 스크립트로 변환하기
+## 04-2: 숙제
+
+- GitHub Copilot을 사용해서 앞서 작성한 파워셸 스크립트의 정렬 방식을 순위별로 변경하고, 순위, 노래 제목, 가수 컬럼만 출력하세요.
+
+## 04-3: 파워셸 스크립트를 Bash 셸 스크립트로 변환하기
 
 1. 앞서 작성한 `Get-MelonChartData.ps1` 파일을 열고 전체 내용을 선택합니다. GitHub Copilot Chat을 열어 아래와 입력하여 Bash 셸 스크립트로 변환합니다.
 
@@ -144,7 +148,7 @@
     ./get-melonchartdata.sh --url=$url --filepath="top100.json"
     ```
 
-## 04-3: 숙제
+## 04-4: 숙제
 
 - 아래 문화관광부 공연정보 API를 활용해서 가장 최근에 열린 공연 정보(제목, 날짜, 장소)를 가져오는 Bash 셸 스크립트를 GitHub Copilot을 이용해 만들어 보세요.
   - [공연정보 API](https://www.culture.go.kr/data/openapi/openapiView.do?id=597)

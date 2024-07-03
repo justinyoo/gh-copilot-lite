@@ -227,7 +227,6 @@
     import java.util.Random;
     import java.util.stream.IntStream;
     
-    @RequestMapping(value = "/api")
     @RestController
     public class WeatherForecastController {
     
@@ -309,12 +308,38 @@ public class YouTubeSummariserApplication {
 1. 웹 브라우저를 열고 `http://localhost:8080`으로 접속해서 Swagger UI 화면이 나오는 것을 확인합니다.
 1. 터미널 창에서 `CTRL`+`C` 키를 눌러 Spring Boot 앱 실행을 중지합니다.
 
-## 03-3: 숙제
+## 03-3: Blazor 프론트엔드 앱과 Spring Boot 백엔드 API 앱 통합하기
 
-- 앞서 만들었던 Blazor 웹 앱의 백엔드를 이 Spring Boot 앱으로 변경한 후 `/weather` 페이지가 제대로 작동하는지 확인해 보세요.
+1. `AspireYouTubeSummariser.WebApp` 프로젝트의 `Program.cs` 파일을 열어 아래와 같이 수정합니다.
+
+    ```csharp
+    // 변경 전
+    builder.Services.AddHttpClient<IApiAppClient, ApiAppClient>(p => p.BaseAddress = new Uri("http://localhost:5050"));
+    
+    // 변경 후
+    builder.Services.AddHttpClient<IApiAppClient, ApiAppClient>(p => p.BaseAddress = new Uri("http://localhost:8080"));
+    ```
+
+1. 터미널에서 아래 명령어를 실행시켜 Spring Boot 백엔드 API 앱을 실행시킵니다.
+
+    ```bash
+    cd $REPOSITORY_ROOT/workshop/AspireYouTubeSummariser.SpringApp
+    ./mvnw clean package spring-boot:run
+    ```
+
+1. 새 터미널에서 아래 명령어를 실행시켜 Blazor 프론트엔드 앱을 실행시킵니다.
+
+    ```bash
+    $REPOSITORY_ROOT = git rev-parse --show-toplevel
+    cd $REPOSITORY_ROOT/workshop
+    dotnet watch run --project AspireYouTubeSummariser.WebApp
+    ```
+
+## 03-4: 숙제
+
 - ASP.NET Core Web API에 있는 `/summarise` 엔드포인트를 GitHub Copilot을 이용해서 Spring Boot 앱으로 이전해 보세요.
 
-  > **NOTE**: [Java용 Azure OpenAI SDK](https://learn.microsoft.com/ko-kr/java/api/overview/azure/ai-openai-readme?WT.mc_id=dotnet-121695-juyoo)가 필요할 수 있습니다.
+  > **NOTE**: [Java용 Azure OpenAI SDK](https://learn.microsoft.com/ko-kr/java/api/overview/azure/ai-openai-readme?WT.mc_id=dotnet-121695-juyoo)가 필요합니다.
 
 ---
 

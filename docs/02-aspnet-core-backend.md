@@ -270,7 +270,7 @@
 1. 계속해서 `SummariseAsync` 메서드 안에서 자막 내용을 요약하는 로직을 구현합니다. GitHub Copilot을 이용해 아래와 같이 수정합니다.
 
     ```text
-    Create a ChatCompletionsOptions instance with the following conditions:
+    Create a ChatCompletionOptions instance with the following conditions:
 
     - It should have the "MaxTokens" property set to the value of "Prompt:MaxTokens" in the configuration.
     - It should have the "Temperature" property set to the value of "Prompt:Temperature" in the configuration.
